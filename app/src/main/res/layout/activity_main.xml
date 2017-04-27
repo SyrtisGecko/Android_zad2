@@ -34,7 +34,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista multichoice"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:onClick="launchLista2"
+        android:text="Lista multichoice" />
 
 </LinearLayout>

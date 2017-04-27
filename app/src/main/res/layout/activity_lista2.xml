@@ -4,19 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.przemek.hsport.myapplication3.Lista1">
+    tools:context="com.example.przemek.hsport.myapplication3.Lista2">
 
     <TextView
-        android:id="@+id/textViewLista1"
+        android:id="@+id/textViewLista2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista Prosta"
+        android:text="Lista Multichoice"
         android:textSize="18sp"
         android:gravity="center_horizontal"/>
 
     <ListView
-        android:id="@+id/listViewLista1"
+        android:id="@+id/listViewLista2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"
+        android:listSelector="#ff88bbdd"/>
 
 </LinearLayout>

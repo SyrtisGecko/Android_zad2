@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Lista1.class);
         startActivity(intent);
     }
+
+    public void launchLista2(View view) {
+        Intent intent = new Intent(this, Lista2.class);
+        startActivity(intent);
+    }
 }
