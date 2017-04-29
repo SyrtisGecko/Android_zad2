@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String[] lista = {"Position 1", "Position 2", "Position 3"};
     String[] p = {"1", " 2", " 3"};
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void launchLista2(View view) {
         Intent intent = new Intent(this, Lista2.class);
+        startActivity(intent);
+    }
+
+    public void launchLista3(View view) {
+        Intent intent = new Intent(this, Lista3.class);
         startActivity(intent);
     }
 
