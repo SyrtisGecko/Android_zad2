@@ -22,4 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Lista2.class);
         startActivity(intent);
     }
+
+    public void launchGrid1(View view) {
+        Intent intent = new Intent(this, Grid1.class);
+        startActivity(intent);
+    }
 }
