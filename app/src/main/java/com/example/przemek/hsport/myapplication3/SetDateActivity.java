@@ -19,15 +19,19 @@ public class SetDateActivity extends AppCompatActivity {
 
     public void onDateSelected(View view) {
         DatePicker date = (DatePicker) findViewById(R.id.datePicker);
-        String d = date.getYear() + "-" + date.getMonth() + "-" + date.getDayOfMonth();
-//        EditText text = (EditText) findViewById(R.id.editText3);
-//        String betName = text.getText().toString();
+        String d = date.getYear() + "-" + formatDateValue(date.getMonth()) + "-" + formatDateValue(date.getDayOfMonth());
         Intent resultIntent = new Intent();
         resultIntent.putExtra("date1", d);
-//        resultIntent.putExtra("surname", surnameToSendBack);
-//        resultIntent.putExtra("description", descriptionToSendBack);
         setResult(RESULT_OK, resultIntent);
         finish();
         onBackPressed();
+    }
+
+    private String formatDateValue(int value) {
+        if(value < 10) {
+            return "0" + value;
+        } else {
+            return "" + value;
+        }
     }
 }

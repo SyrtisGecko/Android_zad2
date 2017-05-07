@@ -46,11 +46,16 @@ public class MyTerminarzAdapter extends BaseAdapter {
         }
         mV = convertView;
 
+        String termin = records.get(position);
+        String terminDate = termin.substring(0, 10);
+        String terminDesc = termin.substring(11);
+        System.out.println("Adapter: " + position + "-" + termin);
+
         TextView tv1 = (TextView) mV.findViewById(R.id.row_tv1);
-        tv1.setText(records.get(position));
+        tv1.setText(terminDate);
 
         TextView tv2 = (TextView) mV.findViewById(R.id.row_tv2);
-        tv2.setText(records.get(position));
+        tv2.setText(terminDesc);
 
         return mV;
     }

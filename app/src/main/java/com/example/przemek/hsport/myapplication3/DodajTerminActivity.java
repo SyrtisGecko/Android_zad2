@@ -20,8 +20,6 @@ public class DodajTerminActivity extends AppCompatActivity {
         String betName = date + " " + text.getText().toString();
         Intent resultIntent = new Intent();
         resultIntent.putExtra("bet", betName);
-//        resultIntent.putExtra("surname", surnameToSendBack);
-//        resultIntent.putExtra("description", descriptionToSendBack);
         setResult(RESULT_OK, resultIntent);
         finish();
         onBackPressed();
@@ -35,19 +33,9 @@ public class DodajTerminActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 0) {
             if(resultCode == RESULT_OK) {
-//                System.out.println("Getting back after selecting bet.");
                 date = data.getStringExtra("date1");
                 System.out.println("Debug in DodajTerminActivity: " + date);
-//                terminy.add(termin);
-//                thisBet = bet;
 
-//                ImageView yourBetImage = (ImageView) findViewById(R.id.yourBet);
-//                int resID = getResources().getIdentifier(bet, "drawable", getPackageName());
-//                System.out.println(bet + ", drawable, " + getPackageName());
-//                yourBetImage.setImageResource(resID);
-
-//                saveToFile();
-//                readTerminyRecords();
                 EditText dateText = (EditText) findViewById(R.id.editText);
                 dateText.setText(date);
             }
