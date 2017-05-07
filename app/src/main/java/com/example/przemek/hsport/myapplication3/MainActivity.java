@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(intent);
     }
 
+    public void launchTerminarz(View view) {
+        Intent intent = new Intent(this, TerminarzActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getApplicationContext(), "You have chosen: " + p[position], Toast.LENGTH_SHORT).show();

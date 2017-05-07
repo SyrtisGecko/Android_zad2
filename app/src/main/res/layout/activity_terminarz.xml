@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    tools:context="com.example.przemek.hsport.myapplication3.TerminarzActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:gravity="top"
+        android:id="@+id/linearLay">
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTerm"
+            android:text="Debug"/>
+
+
+    <Button
+        android:id="@+id/addTerminButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj termin"
+        android:layout_gravity="center_horizontal"
+        android:onClick="dodajTermin"/>
+
+</LinearLayout>
