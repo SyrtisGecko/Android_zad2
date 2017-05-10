@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class DodajTerminActivity extends AppCompatActivity {
     String date;
@@ -36,7 +37,7 @@ public class DodajTerminActivity extends AppCompatActivity {
                 date = data.getStringExtra("date1");
                 System.out.println("Debug in DodajTerminActivity: " + date);
 
-                EditText dateText = (EditText) findViewById(R.id.editText);
+                TextView dateText = (TextView) findViewById(R.id.editText);
                 dateText.setText(date);
             }
         }

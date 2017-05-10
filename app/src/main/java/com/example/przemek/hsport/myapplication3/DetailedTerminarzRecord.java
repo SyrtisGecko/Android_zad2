@@ -17,7 +17,6 @@ public class DetailedTerminarzRecord extends AppCompatActivity {
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
         position = (int)bundle.getLong("id");
-//        position = i.getIntExtra("id", (int)id);
         String record = TerminarzActivity.terminy.get(position);
 
         TextView textDate = (TextView) findViewById(R.id.dispDate);
@@ -33,8 +32,5 @@ public class DetailedTerminarzRecord extends AppCompatActivity {
         setResult(RESULT_OK, resultIntent);
         finish();
         onBackPressed();
-
-//        TerminarzActivity.terminy.remove(position);
-//        onBackPressed();
     }
 }

@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -54,16 +52,6 @@ public class TerminarzActivity extends AppCompatActivity implements AdapterView.
         ListView lista = (ListView) findViewById(R.id.listViewTerminarz);
         lista.setOnItemClickListener(this);
         lista.setAdapter(new MyTerminarzAdapter(this, terminy));
-
-
-//        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLay);
-//        TextView term = new TextView(this);
-//        term.setText("");
-//        for(int i = 0; i < terminy.size(); i++) {
-//            term.append(terminy.get(i));
-//            term.append("\n");
-//        }
-//        layout.addView(term);
     }
 
     public void dodajTermin(View view) {
@@ -113,7 +101,6 @@ public class TerminarzActivity extends AppCompatActivity implements AdapterView.
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void clearAll(View view) {

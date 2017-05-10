@@ -1,11 +1,9 @@
 package com.example.przemek.hsport.myapplication3;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -66,22 +64,4 @@ public class MyTerminarzAdapter extends BaseAdapter {
         return mV;
     }
 
-//    @Override
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        Intent intent = new Intent(ctx, DetailedTerminarzRecord.class);
-//        ctx.startActivity(intent);
-//        intent.putExtra("id", id);
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//
-//    }
-
-//    @Override
-//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent intent = new Intent(ctx, DetailedTerminarzRecord.class);
-//        ctx.startActivity(intent);
-//        intent.putExtra("id", id);
-//    }
 }
