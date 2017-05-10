@@ -22,7 +22,8 @@
         <activity android:name=".Lista3" />
         <activity android:name=".TerminarzActivity" />
         <activity android:name=".DodajTerminActivity" />
-        <activity android:name=".SetDateActivity"></activity>
+        <activity android:name=".SetDateActivity" />
+        <activity android:name=".DetailedTerminarzRecord"></activity>
     </application>
 
 </manifest>

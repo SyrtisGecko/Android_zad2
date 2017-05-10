@@ -19,7 +19,8 @@ public class SetDateActivity extends AppCompatActivity {
 
     public void onDateSelected(View view) {
         DatePicker date = (DatePicker) findViewById(R.id.datePicker);
-        String d = date.getYear() + "-" + formatDateValue(date.getMonth()) + "-" + formatDateValue(date.getDayOfMonth());
+        int month = date.getMonth() + 1;
+        String d = date.getYear() + "-" + formatDateValue(month) + "-" + formatDateValue(date.getDayOfMonth());
         Intent resultIntent = new Intent();
         resultIntent.putExtra("date1", d);
         setResult(RESULT_OK, resultIntent);

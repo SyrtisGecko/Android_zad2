@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,15 +17,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class TerminarzActivity extends AppCompatActivity {
-    ArrayList<String> terminy = new ArrayList<String>();
-    FileInputStream in;
-    FileOutputStream os;
+public class TerminarzActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    static ArrayList<String> terminy;
+    private FileInputStream in;
+    private FileOutputStream os;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terminarz);
+
+        terminy = new ArrayList<String>();
 
         readingFile();
     }
@@ -34,13 +37,10 @@ public class TerminarzActivity extends AppCompatActivity {
             in = openFileInput("Baza_terminow");
             InputStreamReader inputStreamReader = new InputStreamReader(in);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-//            StringBuilder sb = new StringBuilder();
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-//                sb.append(line);
                 terminy.add(line);
                 System.out.println("Adding line to array from file: " + line);
-//                readTerminyRecords(line);
             }
             in.close();
 
@@ -52,7 +52,9 @@ public class TerminarzActivity extends AppCompatActivity {
 
     private void readTerminyRecords() {
         ListView lista = (ListView) findViewById(R.id.listViewTerminarz);
+        lista.setOnItemClickListener(this);
         lista.setAdapter(new MyTerminarzAdapter(this, terminy));
+
 
 //        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLay);
 //        TextView term = new TextView(this);
@@ -72,16 +74,17 @@ public class TerminarzActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 0) {
             if(resultCode == RESULT_OK) {
-//                System.out.println("Getting back after selecting bet.");
                 String termin = data.getStringExtra("bet");
                 System.out.println("Debug in TerminarzActivity: " + termin);
                 terminy.add(termin);
-//                thisBet = bet;
 
-//                ImageView yourBetImage = (ImageView) findViewById(R.id.yourBet);
-//                int resID = getResources().getIdentifier(bet, "drawable", getPackageName());
-//                System.out.println(bet + ", drawable, " + getPackageName());
-//                yourBetImage.setImageResource(resID);
+                saveToFile();
+                readTerminyRecords();
+            }
+        } else if(requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                int pos = data.getIntExtra("delConf", 0);
+                terminy.remove(pos);
 
                 saveToFile();
                 readTerminyRecords();
@@ -117,5 +120,12 @@ public class TerminarzActivity extends AppCompatActivity {
         terminy = new ArrayList<String>();
         saveToFile();
         readingFile();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, DetailedTerminarzRecord.class);
+        intent.putExtra("id", id);
+        startActivityForResult(intent, 1);
     }
 }

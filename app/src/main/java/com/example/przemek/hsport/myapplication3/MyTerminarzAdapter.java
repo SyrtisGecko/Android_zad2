@@ -1,10 +1,13 @@
 package com.example.przemek.hsport.myapplication3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -57,6 +60,28 @@ public class MyTerminarzAdapter extends BaseAdapter {
         TextView tv2 = (TextView) mV.findViewById(R.id.row_tv2);
         tv2.setText(terminDesc);
 
+        CheckBox check = (CheckBox) mV.findViewById(R.id.lrow_checkBox);
+        check.setVisibility(View.INVISIBLE);
+
         return mV;
     }
+
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        Intent intent = new Intent(ctx, DetailedTerminarzRecord.class);
+//        ctx.startActivity(intent);
+//        intent.putExtra("id", id);
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
+
+//    @Override
+//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//        Intent intent = new Intent(ctx, DetailedTerminarzRecord.class);
+//        ctx.startActivity(intent);
+//        intent.putExtra("id", id);
+//    }
 }
